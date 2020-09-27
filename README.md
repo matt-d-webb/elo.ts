@@ -6,8 +6,9 @@
   <h2 align="center">elo</h1>
 </p>
 <p align="center">
-    Implements the basic **Elo** rating system calculations in `TypeScript`.
+    Implements the basic <strong>Elo</strong> rating system calculations in <i>TypeScript<i>.
 </p>
+
 
 > The Elo rating system is a method for calculating the relative skill levels of players in zero-sum games such as chess. It is named after its creator Arpad Elo, a Hungarian-American physics professor.
 > - [Wikipedia](https://en.wikipedia.org/wiki/Elo_rating_system)
