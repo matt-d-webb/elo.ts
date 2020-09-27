@@ -1,0 +1,11 @@
+[{
+    "white": {
+        "name": "matt",
+        "rating": 2000
+    },
+    "black": {
+        "name": "matt",
+        "rating": 2000
+    },
+    "result": 1
+}]

@@ -1,9 +1,10 @@
-import { elo } from './elo';
+import Elo from './elo';
 
-// example:
+const elo = new Elo({ k: 20, rating: 2000 });
 
-const result = elo(2000, 2200, 20, 1);
+const result = elo.change(2200, 1);
 
+console.log(result);
 // { change: 15.194938532959213, newRating: 2015 }
 
 

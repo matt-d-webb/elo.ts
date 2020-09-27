@@ -5,6 +5,10 @@
   "author": "Matthew D Webb <matt.d.webb@icloud.com>",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "npx jest",
+    "start": "tsc && node dist/index.js"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.14",
     "jest": "^26.4.2",

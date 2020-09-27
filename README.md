@@ -6,7 +6,7 @@
   <h2 align="center">elo</h1>
 </p>
 <p align="center">
-    Implements the basic <strong>Elo</strong> rating system calculations in <i>TypeScript<i>.
+    Implements the basic <strong>Elo</strong> rating system calculations in <i>TypeScript</i>.
 </p>
 
 
@@ -16,8 +16,15 @@
 
 ## Basic
 
+**JS**
 ```javascript
-const elo = require('elo');
-
-const { change } = elo(2000, 2200, 20, 1); // 15.19 ...
+const Elo = require('elo');
+const elo = new Elo({ k: 20, rating: 2000 }); // set your defaults!
+const { change } = elo.change(2200, 1 /* 1 = win, 0.5 = draw, 0 = loss */); // 15.19 ...
+```
+**TS**
+```typescript
+import Elo from 'elo';
+const elo = new Elo({ k: 20, rating: 2000 }); // set your defaults!
+const { change } = elo.change(2200, 1 /* 1 = win, 0.5 = draw, 0 = loss */); // 15.19 ...
 ```
