@@ -1,7 +1,14 @@
 {
   "name": "elo",
   "version": "1.0.0",
-  "description": "",
+  "description": "elo calculator",
+  "author": "Matthew D Webb <matt.d.webb@icloud.com>",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.4.0",
+    "typescript": "^4.0.3"
+  }
 }
