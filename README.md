@@ -22,9 +22,3 @@ const Elo = require('elo');
 const elo = new Elo({ k: 20, rating: 2000 }); // set your defaults!
 const { change } = elo.change(2200, 1 /* 1 = win, 0.5 = draw, 0 = loss */); // 15.19 ...
 ```
-**TS**
-```typescript
-import Elo from 'elo';
-const elo = new Elo({ k: 20, rating: 2000 }); // set your defaults!
-const { change } = elo.change(2200, 1 /* 1 = win, 0.5 = draw, 0 = loss */); // 15.19 ...
-```
