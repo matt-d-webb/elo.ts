@@ -7,7 +7,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "npx jest",
-    "start": "tsc && node dist/index.js"
+    "start": "tsc && node dist/index.js",
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/jest": "^26.0.14",

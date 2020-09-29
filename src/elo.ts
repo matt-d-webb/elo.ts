@@ -8,17 +8,14 @@ interface IElo {
 }
 
 interface IOptions {
-    k: number,
-    rating: number
+    k?: number,
+    rating?: number
 }
 
 const change = (playerRating: number, opponentRating: number, kFactor: number, result: number): IRatingChange => {
-
     const transformPR: number = Math.pow(10, (playerRating / 400));
     const transformOR: number = Math.pow(10, (opponentRating / 400));
-
     const expectation: number = transformPR / (transformPR + transformOR);
-
     const outcome = playerRating + kFactor * (result - expectation);
 
     return {
@@ -33,18 +30,18 @@ const performance = () => {
     // calculates the performance rating + change in raing
 }
 
-
-
 export default class Elo implements IElo {
-    #k: number;
-    #rating: number;
-    constructor(options: IOptions) {
-        this.#k = options.k;
-        this.#rating = options.rating
+    #__defaults__: IOptions = {
+        k: 20,
+        rating: 1200
+    };
+    #options: IOptions;
+
+    constructor(options?: IOptions) {
+        this.#options = Object.assign({}, this.#__defaults__, options);
     }
 
     change(opponentRating: number, result: number): IRatingChange {
-        return change(this.#rating, opponentRating, this.#k, result);
+        return change(this.#options.rating, opponentRating, this.#options.k, result);
     }
-
 } 
