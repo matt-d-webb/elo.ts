@@ -1,7 +1,7 @@
 {
-  "name": "elo",
+  "name": "elo-rating-system",
   "version": "1.0.0",
-  "description": "elo calculator",
+  "description": "elo calculator in javascript",
   "author": "Matthew D Webb <matt.d.webb@icloud.com>",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
