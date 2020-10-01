@@ -28,3 +28,7 @@ const { change } = elo.change(2200, result.win); // 15.19 ...
 ```bash
 npx jest
 ```
+
+**Todo**
+* multi result calculation 
+* performance rating calculation
