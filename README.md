@@ -16,6 +16,8 @@
 
 ## Basic
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/de13737906324a0b8039d4c246fabf93)](https://app.codacy.com/gh/matt-d-webb/elo?utm_source=github.com&utm_medium=referral&utm_content=matt-d-webb/elo&utm_campaign=Badge_Grade)
+
 **JS**
 ```javascript
 const Elo = require('elo');
