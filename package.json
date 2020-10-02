@@ -10,7 +10,7 @@
     "start": "tsc && node dist/index.js",
     "build": "tsc",
     "view:coverage": "serve coverage/lcov-report",
-    "clean": "rm -rf coverage src/**/*.js src/**/*.map",
+    "clean": "rm -rf coverage src/**/*.js src/**/*.map"
   },
   "devDependencies": {
     "@types/jest": "^26.0.14",

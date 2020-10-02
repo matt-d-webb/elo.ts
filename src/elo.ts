@@ -23,12 +23,12 @@ const change = (playerRating: number, opponentRating: number, kFactor: number, r
         change: (outcome - playerRating),
         newRating: Math.round(outcome)
     };
-};
+}
 
 const probablility = (playerRating: number, opponentRating: number) => {
     const diff = opponentRating - playerRating;
     return 1 / (1 + Math.pow(10, diff / 400));
-};
+}
 
 export class Elo implements IElo {
     #__defaults__: IOptions = {
@@ -48,4 +48,4 @@ export class Elo implements IElo {
     probablility(opponentRating: number) {
         return probablility(this.#options.rating, opponentRating);
     }
-};
+}
