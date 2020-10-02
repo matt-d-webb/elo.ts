@@ -11,6 +11,8 @@
       <p align="center">
   <img alt="CircleCI" src="https://img.shields.io/circleci/build/github/matt-d-webb/elo">
   <a href="https://www.codacy.com/gh/matt-d-webb/elo/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=matt-d-webb/elo&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/a42f9b2f24664121891aa40081f04b21"/></a>
+  <a href='https://coveralls.io/github/matt-d-webb/elo?branch=master'><img src='https://coveralls.io/repos/github/matt-d-webb/elo/badge.svg?branch=master' alt='Coverage Status' /></a>
+
   </p>
 </p>
 
