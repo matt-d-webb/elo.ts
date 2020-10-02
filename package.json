@@ -6,12 +6,15 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "npx jest",
+    "test": "jest --coverage",
     "start": "tsc && node dist/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "view:coverage": "serve coverage/lcov-report",
+    "clean": "rm -rf coverage src/**/*.js src/**/*.map",
   },
   "devDependencies": {
     "@types/jest": "^26.0.14",
+    "coveralls": "^3.1.0",
     "jest": "^26.4.2",
     "ts-jest": "^26.4.0",
     "typescript": "^4.0.3"
