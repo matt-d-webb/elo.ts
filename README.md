@@ -16,10 +16,8 @@
   </p>
 </p>
 
-
 > _The Elo rating system is a method for calculating the relative skill levels of players in zero-sum games such as chess. It is named after its creator Arpad Elo, a Hungarian-American physics professor -_
 > [_wikipedia_](https://en.wikipedia.org/wiki/Elo_rating_system)
-
 
 ## Basic
 
@@ -45,5 +43,5 @@ npx jest
 ```
 
 **Todo**
-* multi result calculation 
-* performance rating calculation
+*   multi result calculation 
+*   performance rating calculation

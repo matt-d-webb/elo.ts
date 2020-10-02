@@ -1,4 +1,4 @@
-import { Elo } from './elo';
+import { Elo } from "./elo";
 
 export default Elo;
 
