@@ -1,4 +1,4 @@
-const Elo = require('../dist/index.js').default;
+const Elo = require("../dist/index.js").default;
 
 const elo = new Elo({ k: 20, rating: 2000 });
 

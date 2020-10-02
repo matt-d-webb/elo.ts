@@ -39,7 +39,7 @@ export class Elo implements IElo {
 
     constructor(options?: IOptions) {
         this.#options = Object.assign({}, this.#__defaults__, options);
-    };
+    }
 
     change(opponentRating: number, result: number): IRatingChange {
         return change(this.#options.rating, opponentRating, this.#options.k, result);
