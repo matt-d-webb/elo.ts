@@ -43,9 +43,9 @@ export class Elo implements IElo {
 
     change(opponentRating: number, result: number): IRatingChange {
         return change(this.#options.rating, opponentRating, this.#options.k, result);
-    };
+    }
 
     probablility(opponentRating: number) {
         return probablility(this.#options.rating, opponentRating);
-    };
+    }
 };
