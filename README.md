@@ -16,13 +16,20 @@
 
 ## Basic
 
-**JS**
+### JS 
+**change** - rating change based `opponentRating` and `result`
 ```javascript
 const Elo = require('elo');
 const elo = new Elo({ k: 20, rating: 2000 }); // set your defaults!
 const result = Object.freeze({ win: 1, loss: 0, draw: 0.5 });
 const { change } = elo.change(2200, result.win); // 15.19 ...
 ```
+
+**probability** - of a win vs `opponentRating`
+```javascript
+const probability = elo.probability(2200); // 0.24 ...
+```
+
 ## Tests
 
 ```bash

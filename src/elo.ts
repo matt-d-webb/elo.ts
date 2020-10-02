@@ -3,8 +3,9 @@ interface IRatingChange {
     newRating: Number
 }
 
-interface IElo {
-    change(opponentRating: number, result: number): IRatingChange
+export interface IElo {
+    change(opponentRating: number, result: number): IRatingChange,
+    probablility(opponentRating: number): number
 }
 
 interface IOptions {
@@ -24,13 +25,12 @@ const change = (playerRating: number, opponentRating: number, kFactor: number, r
     };
 }
 
-const performance = () => {
-    // takes a list of opponent ratings: [2100, 2200, 2250, 2190];
-    // takes the performance: 1.5 / 4
-    // calculates the performance rating + change in raing
+const probablility = (playerRating: number, opponentRating: number) => {
+    const diff = opponentRating - playerRating;
+    return 1 / (1 + Math.pow(10, diff / 400));
 }
 
-export default class Elo implements IElo {
+export class Elo implements IElo {
     #__defaults__: IOptions = {
         k: 20,
         rating: 1200
@@ -43,5 +43,9 @@ export default class Elo implements IElo {
 
     change(opponentRating: number, result: number): IRatingChange {
         return change(this.#options.rating, opponentRating, this.#options.k, result);
+    }
+
+    probablility(opponentRating: number) {
+        return probablility(this.#options.rating, opponentRating);
     }
 } 
