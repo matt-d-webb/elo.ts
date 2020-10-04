@@ -49,7 +49,7 @@ const result = Object.freeze({ win: 1, loss: 0, draw: 0.5 });
 ```
 
 **.change()** - rating change based `opponentRating` and `result`
-```
+```javascript
 const { change } = elo.change(2200, result.win); // 15.19 ...
 ```
 
