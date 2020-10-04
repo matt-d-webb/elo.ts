@@ -48,14 +48,14 @@ _Optional: create a helper object_
 const result = Object.freeze({ win: 1, loss: 0, draw: 0.5 });
 ```
 
-**.change()** - rating change based `opponentRating` and `result`
+**.change()** - rating change based on `opponentRating` and `result`
 ```javascript
 const { change } = elo.change(2200, result.win); // 15.19 ...
 ```
 
-**.probability()** - of a win vs `opponentRating`
+**.probability()** - decimal probability of winning vs `opponentRating`
 ```javascript
-const probability = elo.probability(2200); // 0.24 ...
+const probability = elo.probability(2200); // 0.24 (or 24%)
 ```
 
 ## Tests
