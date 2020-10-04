@@ -7,7 +7,7 @@
 
 </p>
 <p align="center">
-    Implements the basic <strong>Elo</strong> rating system calculations in <i>TypeScript</i>.
+    Implements the basic <strong>Elo</strong> rating system in <i>TypeScript</i>.
       <p align="center">
   <img alt="CircleCI" src="https://img.shields.io/circleci/build/github/matt-d-webb/elo">
   <a href="https://www.codacy.com/gh/matt-d-webb/elo/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=matt-d-webb/elo&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/a42f9b2f24664121891aa40081f04b21"/></a>
