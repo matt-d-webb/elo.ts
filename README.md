@@ -38,9 +38,9 @@ yarn add elo-rating-system
 const Elo = require('elo');
 ```
 
-Initialise a instance of the class:
+Initialise instance:
 ```javascript
-const elo = new Elo({ k: 20, rating: 2000 }); // set your defaults!
+const elo = new Elo({ k: 20, rating: 2000 }); // override the defaults!
 ```
 
 _Optional: create a helper object_
@@ -66,3 +66,4 @@ npx jest
 **Todo**
 *   multi result calculation 
 *   performance rating calculation
+*   calculate automatic k-factor
