@@ -19,15 +19,37 @@
 > _The Elo rating system is a method for calculating the relative skill levels of players in zero-sum games such as chess. It is named after its creator Arpad Elo, a Hungarian-American physics professor -_
 > [_wikipedia_](https://en.wikipedia.org/wiki/Elo_rating_system)
 
+```bash
+npm install elo-rating-system --save
+```
+
+Or
+
+```base
+yarn add elo-rating-system
+```
+
 ## Basic
 
 ### JS examples
 
-**.change()** - rating change based `opponentRating` and `result`
+**Require dependency**
 ```javascript
 const Elo = require('elo');
+```
+
+**Initialise a instance of the class:
+```javascript
 const elo = new Elo({ k: 20, rating: 2000 }); // set your defaults!
+```
+
+_Optional: create a helper object_
+```javascript
 const result = Object.freeze({ win: 1, loss: 0, draw: 0.5 });
+```
+
+**.change()** - rating change based `opponentRating` and `result`
+```
 const { change } = elo.change(2200, result.win); // 15.19 ...
 ```
 
@@ -37,7 +59,6 @@ const probability = elo.probability(2200); // 0.24 ...
 ```
 
 ## Tests
-
 ```bash
 npx jest
 ```
