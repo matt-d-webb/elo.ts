@@ -63,7 +63,9 @@ const probability = elo.probability(2200); // 0.24 (or 24%)
 npx jest
 ```
 
-**Todo**
-*   multi result calculation 
+**Todo:**
+*   individual results calculation 
 *   performance rating calculation
 *   calculate automatic k-factor
+*   calculate full tournament result list
+
