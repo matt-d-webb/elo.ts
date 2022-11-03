@@ -1,6 +1,6 @@
 {
   "name": "elo-rating-system",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "elo calculator in javascript",
   "author": "Matthew D Webb <matt.d.webb@icloud.com>",
   "main": "dist/index.js",
@@ -18,8 +18,5 @@
     "jest": "^26.4.2",
     "ts-jest": "^26.4.0",
     "typescript": "^4.0.3"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }

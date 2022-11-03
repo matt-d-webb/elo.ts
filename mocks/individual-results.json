@@ -1,1 +1,25 @@
-[{}]
+[{
+    "rating": 1000,
+    "result": 1,
+    "colour": "white"
+},
+{
+    "rating": 1500,
+    "result": 1,
+    "colour": "black"
+},
+{
+    "rating": 1900,
+    "result": 0,
+    "colour": "white"
+},
+{
+    "rating": 2200,
+    "result": 0.5,
+    "colour": "black"
+},
+{
+    "rating": 2100,
+    "result": 1,
+    "colour": "black"
+}]
