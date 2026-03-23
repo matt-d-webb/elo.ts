@@ -3,7 +3,7 @@
       alt="Elo"
       src="img/chart-icon.png?raw=true"
     />
-  <h2 align="center">elo</h1>
+  <h2 align="center">elo</h2>
 
 </p>
 <p align="center">
@@ -19,37 +19,20 @@
 > [_wikipedia_](https://en.wikipedia.org/wiki/Elo_rating_system)
 
 ```bash
-npm install elo-rating-system --save
+npm install elo-rating-system
 ```
 
-Or
+## Usage
 
-```base
-yarn add elo-rating-system
-```
-
-## Basic
-
-### JS examples
-
-**Require dependency**
 ```javascript
-const Elo = require('elo');
-```
+const { Elo } = require('elo-rating-system');
 
-Initialise instance:
-```javascript
-const elo = new Elo({ k: 20, rating: 2000 }); // override the defaults!
-```
-
-_Optional: create a helper object_
-```javascript
-const result = Object.freeze({ win: 1, loss: 0, draw: 0.5 });
+const elo = new Elo({ k: 20, rating: 2000 }); // override the defaults (k: 20, rating: 1200)
 ```
 
 **.change()** - rating change based on `opponentRating` and `result`
 ```javascript
-const { change } = elo.change(2200, result.win); // 15.19 ...
+const { change, newRating } = elo.change(2200, 1); // { change: 15.19..., newRating: 2015 }
 ```
 
 **.probability()** - decimal probability of winning vs `opponentRating`
@@ -57,14 +40,19 @@ const { change } = elo.change(2200, result.win); // 15.19 ...
 const probability = elo.probability(2200); // 0.24 (or 24%)
 ```
 
-## Tests
-```bash
-npx jest
+**.performance()** - performance rating from an array of game results
+```javascript
+const perf = elo.performance([
+    { opponentRating: 2200, result: 1 },
+    { opponentRating: 2100, result: 0.5 },
+    { opponentRating: 2600, result: 0 },
+]);
+// { games: 3, change: [...], ratings: [...], tpr: 2233.33 }
 ```
 
-**Todo:**
-*   individual results calculation 
-*   performance rating calculation
-*   calculate automatic k-factor
-*   calculate full tournament result list
+Results use `1` for a win, `0.5` for a draw, and `0` for a loss.
 
+## Tests
+```bash
+npm test
+```

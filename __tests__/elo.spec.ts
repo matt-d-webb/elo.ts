@@ -1,5 +1,4 @@
-import Elo from '../src';
-import { IElo } from '../src/elo';
+import { Elo, IElo } from '../src';
 
 describe('Elo', () => {
     let elo: IElo;

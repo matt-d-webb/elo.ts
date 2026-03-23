@@ -18,7 +18,7 @@ interface IResult {
     result: GameResult
 }
 
-enum GameResult {
+export enum GameResult {
     win = 1,
     draw = 0.5,
     loss = 0

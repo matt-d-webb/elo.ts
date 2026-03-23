@@ -1,5 +1,2 @@
-import { Elo } from "./elo";
-
-export default Elo;
-
-
+export { Elo } from "./elo";
+export type { IElo, GameResult } from "./elo";
