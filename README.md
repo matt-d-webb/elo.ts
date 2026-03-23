@@ -9,7 +9,7 @@
 <p align="center">
     Implements the basic <strong>Elo</strong> rating system in <i>TypeScript</i>.
       <p align="center">
-  <a href="https://github.com/matt-d-webb/elo/actions/workflows/test.yml"><img src="https://github.com/matt-d-webb/elo/actions/workflows/test.yml/badge.svg" alt="Test" /></a>
+  <a href="https://github.com/matt-d-webb/elo.ts/actions/workflows/test.yml"><img src="https://github.com/matt-d-webb/elo.ts/actions/workflows/test.yml/badge.svg" alt="Test" /></a>
   <a href="https://www.npmjs.com/package/elo-rating-system"><img src="https://img.shields.io/npm/v/elo-rating-system" alt="npm version" /></a>
 
   </p>
