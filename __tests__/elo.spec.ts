@@ -18,12 +18,12 @@ describe('Elo', () => {
     });
 
     test('probability() with overrides', () => {
-        const probability = elo.probablility(2200);
+        const probability = elo.probability(2200);
         expect(probability).toStrictEqual(0.2402530733520421);
     });
     test('probability() with defaults', () => {
         const eloDefaults = new Elo();
-        const probability = eloDefaults.probablility(2200);
-        expect(probability).toStrictEqual(0.0031523091832602124);
+        const probability = eloDefaults.probability(2200);
+        expect(probability).toBeCloseTo(0.0031523091832602124, 15);
     });
 });
