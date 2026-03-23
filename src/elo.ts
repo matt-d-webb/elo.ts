@@ -3,13 +3,15 @@ interface IRatingChange {
     newRating: number
 }
 
+type KFactor = number | ((rating: number) => number);
+
 interface IOptions {
-    k: number,
+    k: KFactor,
     rating: number
 }
 
 interface IOptionsInput {
-    k?: number,
+    k?: KFactor,
     rating?: number
 }
 
@@ -48,6 +50,11 @@ export class Elo implements IElo {
         this.#options = Object.assign({}, this.#__defaults__, options);
     }
 
+    private _resolveK = (rating: number): number => {
+        const k = this.#options.k;
+        return typeof k === 'function' ? k(rating) : k;
+    };
+
     private _change = (playerRating: number, opponentRating: number, kFactor: number, result: number): IRatingChange => {
         const transformPR: number = Math.pow(10, (playerRating / 400));
         const transformOR: number = Math.pow(10, (opponentRating / 400));
@@ -65,7 +72,7 @@ export class Elo implements IElo {
         if (diff > 400) {
             return playerRating + 400;
         }
-        if (opponentRating < 400) {
+        if (diff < -400) {
             return playerRating - 400;
         }
         return opponentRating;
@@ -83,7 +90,7 @@ export class Elo implements IElo {
         const perf = results.reduce((pre, cur) => {
 
             const r = this._maxRating(this.#options.rating, cur.opponentRating);
-            const c = this._change(this.#options.rating, r, this.#options.k, cur.result);
+            const c = this._change(this.#options.rating, r, this._resolveK(this.#options.rating), cur.result);
 
             const games = pre.games + 1;
             const tpr = [...pre.ratings, r].reduce((p, c) => p += c, 0) / games;
@@ -106,7 +113,7 @@ export class Elo implements IElo {
     }
 
     public change(opponentRating: number, result: number): IRatingChange {
-       return this._change(this.#options.rating, opponentRating, this.#options.k, result);
+       return this._change(this.#options.rating, opponentRating, this._resolveK(this.#options.rating), result);
     }
 
     public probability(opponentRating: number): number {

@@ -52,6 +52,20 @@ const perf = elo.performance([
 
 Results use `1` for a win, `0.5` for a draw, and `0` for a loss.
 
+### Dynamic K-Factor
+
+Pass a function as `k` to vary the K-factor based on the player's rating:
+
+```javascript
+const elo = new Elo({
+    rating: 2000,
+    k: (rating) => {
+        if (rating < 2400) return 40;
+        return 10;
+    },
+});
+```
+
 ## Tests
 ```bash
 npm test
