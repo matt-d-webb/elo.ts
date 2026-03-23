@@ -4,6 +4,11 @@ interface IRatingChange {
 }
 
 interface IOptions {
+    k: number,
+    rating: number
+}
+
+interface IOptionsInput {
     k?: number,
     rating?: number
 }
@@ -21,9 +26,9 @@ enum GameResult {
 
 interface IPerformanceRating {
     games: number,
-    change: number[], 
-    ratings: number[], 
-    tpr: number 
+    change: IRatingChange[],
+    ratings: number[],
+    tpr: number
 }
 
 export interface IElo {
@@ -39,7 +44,7 @@ export class Elo implements IElo {
     };
     #options: IOptions;
 
-    constructor(options?: IOptions) {
+    constructor(options?: IOptionsInput) {
         this.#options = Object.assign({}, this.#__defaults__, options);
     }
 
@@ -73,6 +78,8 @@ export class Elo implements IElo {
 
     private _performance = (results: IResult[]): IPerformanceRating => {
 
+        const initial: IPerformanceRating = { games: 0, change: [], ratings: [], tpr: 0 };
+
         const perf = results.reduce((pre, cur) => {
 
             const r = this._maxRating(this.#options.rating, cur.opponentRating);
@@ -88,7 +95,7 @@ export class Elo implements IElo {
                 tpr
             };
 
-        }, { games: 0, change: [], ratings: [], tpr: 0 });
+        }, initial);
 
         return perf;
     }
