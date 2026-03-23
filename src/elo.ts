@@ -85,11 +85,12 @@ export class Elo implements IElo {
             const r = this._maxRating(this.#options.rating, cur.opponentRating);
             const c = this._change(this.#options.rating, r, this.#options.k, cur.result);
 
-            const tpr = [...pre.ratings, r].reduce((p, c) => p += c, 0) / (pre.games += 1);
+            const games = pre.games + 1;
+            const tpr = [...pre.ratings, r].reduce((p, c) => p += c, 0) / games;
 
             return {
                 ...pre,
-                games: pre.games += 1,
+                games,
                 change: [...pre.change, c],
                 ratings: [...pre.ratings, r],
                 tpr
